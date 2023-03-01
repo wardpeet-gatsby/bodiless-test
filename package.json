@@ -2,10 +2,6 @@
   "name": "dxp-proto-monorepo",
   "description": "",
   "version": "0.0.0",
-  "workspaces": [
-    "packages/*",
-    "sites/*"
-  ],
   "keywords": [
     "gatsby"
   ],
