@@ -11,7 +11,7 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "bootstrap": "npm install",
+    "bootstrap": "lerna bootstrap",
     "build": "cross-env NODE_ENV=production lerna run build --stream --ignore @bodiless/gatsby-starter-bodiless",
     "build:only": "cross-env NODE_ENV=production lerna run build --stream --scope",
     "build:packages": "cross-env NODE_ENV=production lerna run build --stream --ignore @sites/*",
