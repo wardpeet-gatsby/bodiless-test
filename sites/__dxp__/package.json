@@ -11,6 +11,7 @@
     "test": "__tests__"
   },
   "dependencies": {
+    "--dxp--": "0.0.0",
     "@babel/core": "^7.9.0",
     "@bodiless/backend": "^1.0.0-rc.24",
     "@bodiless/cli": "^1.0.0-rc.24",

@@ -17,8 +17,6 @@ require('dotenv').config({
   path: `.env.${activeEnv}`,
 });
 
-console.log(process.env);
-
 const SITEURL = process.env.SITE_URL;
 
 const disablePageList = getDisabledPages();
