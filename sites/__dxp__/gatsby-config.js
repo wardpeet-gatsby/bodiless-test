@@ -10,17 +10,22 @@ const { getDisabledPages } = require('@bodiless/components/node-api');
 //   getConfig: getSiteDefaultContentConfig,
 // } = require('./src/components/Contentful');
 
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
 
 require('dotenv').config({
   path: `.env.${activeEnv}`,
 });
 
+console.log(process.env);
+
 const SITEURL = process.env.SITE_URL;
 
 const disablePageList = getDisabledPages();
 const disabledPages = Object.keys(disablePageList).filter(
-  item => disablePageList[item].pageDisabled === true || disablePageList[item].indexingDisabled,
+  (item) =>
+    disablePageList[item].pageDisabled === true ||
+    disablePageList[item].indexingDisabled,
 );
 
 // Gatsby plugins list.
@@ -60,7 +65,7 @@ const plugins = [
         include: true,
         // Pass false to disable logging all resolving operations. Defaults to true.
         logging: true,
-      }
+      },
     },
   },
   // {
@@ -85,7 +90,7 @@ const plugins = [
   // ),
   {
     resolve: '--dxp--',
-  }
+  },
 ];
 
 const robotsTxtPolicy = [
@@ -97,7 +102,7 @@ const robotsTxtPolicy = [
 process.env.ROBOTSTXT_POLICY = JSON.stringify(robotsTxtPolicy);
 
 module.exports = {
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use('/___docs', express.static('doc', { fallthrough: false }));
   },
   siteMetadata: {
